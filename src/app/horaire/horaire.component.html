@@ -1,0 +1,389 @@
+
+
+
+<div class="wrapper">
+
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="../../assets/images/calendrier.png" alt="AdminLTELogo" height="80" width="80">
+      </div>
+
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/employer" class="nav-link">Employers</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+        
+            <li class="nav-item dropdown">
+                
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" href="#" role="button">
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="layout">
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a href="#" class="brand-link">
+        <div class="app-logo">
+          <i class="fas fa-clock"></i>
+          <div class="logo-text">
+              <h1>TimeTracker </h1>
+          </div>
+      </div>
+      </a>
+
+        <div class="sidebar">
+            <div class="user-panel" style="display: flex; align-items: center; gap: 10px; background-color: transparent; text-align: center;">
+                <div class="image" style="flex: 0 0 auto; text-align: center;">
+                    <img src="../../assets/images/Profile.png" alt="User" style="width: 100px; height: 100px;">
+                </div>
+              <!--  <div style="flex: 1; text-align: left;"><p style="margin: 0; font-size: 1em; color: white; font-family: Arial, sans-serif;">{{ email }}</p>
+                </div>-->
+            </div>
+            <nav class="mt-2">
+              <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+                  <li class="nav-item">
+                      <a routerLink="/Dashboard" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Dashboard')">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <B> <p>Tableau de bord</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Employer" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Employer')">
+                          <i class="fas fa-users nav-icon"></i>
+                          <B><p> Employer</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/EmployerDetail" routerLinkActive="active" class="nav-link" (click)="reloadPage('/EmployerDetail')">
+                          <i class="fas fa-users nav-icon"></i>
+                          <B><p> Employer Details</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Horaire" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Horaire')">
+                        <i class="fas fa-calendar-alt nav-icon"></i> 
+                          <B><p> Horaire de Travail</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Pointage" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Pointage')">
+                        <i class="fas fa-clock nav-icon"></i>
+                          <B><p> Pointage</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Rapport" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Rapport')">
+                          <i class="fas fa-calendar-check nav-icon"></i>
+                          <B><p>Rapport </p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Anomalie" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Anomalie')">
+                        <i class="fas fa-exclamation-triangle nav-icon"></i>
+                          <B><p> Anomalie</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Calendrier" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Calendrier')">
+                          <i class="fas fa-calendar-alt nav-icon"></i>
+                          <B><p>Calendrier de Présences</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/Conge" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Conge')">
+                      <i class="fas fa-plane nav-icon"></i>
+                        <B><p>Congé</p></B>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="userRole === 'Super_Admin'" >
+                  <a routerLink="/Admin" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Admin')">
+                      <i class="fas fa-user-shield nav-icon"></i>
+                      <B><p>Administrateur</p></B>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a routerLink="/ChatBot" routerLinkActive="active" class="nav-link" (click)="reloadPage('/ChatBot')">
+                      <i class="fas fa-robot nav-icon"></i>
+                      <B><p>Chatbot</p></B>
+                  </a>
+              </li>
+                  <li class="nav-item">
+                      <a (click)="logout()" class="nav-link">
+                          <i class="nav-icon fas fa-sign-out-alt"></i>
+                          <B><p>Déconnexion</p></B>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+        </div>
+    </aside>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                      <div class="app-logo2">
+                        <i class="fas fa-clock"></i>
+                        <div class="logo-text">
+                            <h1>TimeTracker <span>Pro</span></h1>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Main content -->
+      <section class="content bg-white">
+        <div class="container-fluid">
+      <!--  <div> <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#addChambre">
+                <i class="fas fa-plus"></i>  Create a Room
+            </button>
+        </div>-->
+
+        <br>
+          <!-- Small boxes (Stat box) -->
+
+          <div class="card shadow-lg p-3 bg-white rounded">
+            <div class="card-header">
+                <h3 class="card-title">📅 Liste des Horaires</h3>
+            </div>
+            <!-- <div class="card-body">
+                <table id="example1" class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nom</th>
+                        <th>Prénom</th>
+                        <th>Heure Arrivée</th>
+                        <th>Heure Depart</th>
+                        <th>type</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let horairee of horairess">
+                        <td>{{ horairee.id }}</td>
+                        <td>{{ horairee.employe.nom }}</td>
+                        <td>{{ horairee.employe.prenom }}</td>
+                        <td>{{ horairee.heure_arrivee }}</td>
+                        <td>{{ horairee.heure_depart }}</td>
+                        <td>{{ horairee.type }}</td>
+                        <td>
+                          <button class="btn btn-warning" (click)="selectHoraire(horairee)" data-bs-toggle="modal" data-bs-target="#editHoraire">Modifier</button>
+                          <button class="btn btn-danger" (click)="deleteHoraire(horairee)">Suppri</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  
+            </div>-->
+            <div class="card-body">
+              <table id="example1" class="table table-hover table-bordered text-center">
+                <thead class="table-dark">
+                  <tr>
+                    <th>ID</th>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Heure Arrivée</th>
+                    <th>Heure Départ</th>
+                    <th>Type</th>
+                    <th *ngIf="userRole === 'RH' || userRole === 'Super_Admin'">Actions</th>
+                  </tr>
+                </thead>
+                <tbody >
+                  <tr *ngFor="let horairee of horairess">
+                    <td>{{ horairee.id }}</td>
+                    <td>{{ horairee.employe.nom }}</td>
+                    <td>{{ horairee.employe.prenom }}</td>
+                    <td>{{ horairee.heure_arrivee  }}</td>
+                    <td>{{ horairee.heure_depart  }}</td>
+                    <td>
+                      <span class="badge bg-info text-dark">{{ horairee.type }}</span>
+                    </td>
+                    <td *ngIf="userRole === 'RH' || userRole === 'Super_Admin'">
+                      <button class="btn btn-sm btn-warning mx-1" (click)="selectHoraire(horairee)" data-bs-toggle="modal" data-bs-target="#editHoraire">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button class="btn btn-sm btn-danger" (click)="deleteHoraire(horairee)">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+          
+              <!-- Message si la liste est vide -->
+              <ng-template #noData>
+                <div class="alert alert-warning text-center" role="alert">
+                  ⚠️ Aucun horaire disponible.
+                </div>
+              </ng-template>
+            </div>
+        </div>
+        
+  
+          
+
+
+
+
+
+
+        <div class="container" *ngIf="userRole === 'RH' || userRole === 'Super_Admin'">
+            <h2>Assigner un Horaire à un Employé</h2>
+          
+            <!-- Recherche d'un employé -->
+            <div class="search-box">
+              <input
+                type="text"
+                [(ngModel)]="nomRecherche"
+                placeholder="Rechercher un employé par nom..."
+                class="form-control"
+              />
+              <button (click)="rechercherEmploye()" class="btn btn-primary">Rechercher</button>
+            </div>
+          
+            <!-- Liste des employés trouvés -->
+            <div *ngIf="employes.length > 0">
+              <h3>Résultats :</h3>
+              <ul class="list-group">
+                <li
+                  *ngFor="let employe of employes"
+                  (click)="selectionnerEmploye(employe)"
+                  class="list-group-item"
+                  [class.active]="employe.id === horaire.employeId"
+                >
+                  {{ employe.nom }} {{ employe.prenom }}
+                </li>
+              </ul>
+            </div>
+          
+            <!-- Formulaire d'affectation d'horaire -->
+            <div *ngIf="horaire.employeId">
+              <h3>Définir l'Horaires pour {{ employeSelectionne?.nom }} {{ employeSelectionne?.prenom }}</h3>
+              <form (ngSubmit)="assignerHoraire()">
+                <div class="form-group">
+                  <label>Heure d'Arrivée :</label>
+                  <input type="time" [(ngModel)]="horaire.heure_arrivee" name="heureArrivee" class="form-control" required />
+                </div>
+          
+                <div class="form-group">
+                  <label>Heure de Départ :</label>
+                  <input type="time" [(ngModel)]="horaire.heure_depart" name="heureDepart" class="form-control" required />
+                </div>
+          
+                <div class="form-group">
+                  <label>Type :</label>
+                  <select [(ngModel)]="horaire.type" name="type" class="form-control" required>
+                    <option value="FIXE">Fixe</option>
+                    <option value="FLEXIBLE">Flexible</option>
+                  </select>
+                </div>
+          
+                <button type="submit" class="btn btn-success">Assigner l'Horaires</button>
+              </form>
+            </div>
+          </div>
+      
+          
+
+
+
+
+
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+  </div>
+
+
+   
+
+
+
+
+
+
+
+
+
+
+    <div class="modal fade" id="editHoraire" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier un Horaire à un Employé</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+        <div class="modal-body">
+            <div class="modal-body">
+                <!-- Formulaire dans la modale -->
+                    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                        <div class="mb-3">
+                        <label for="heure_arrivee" class="form-label">Heure Arrivée</label>
+                        <input type="time" class="form-control" id="heure_arrivee" [(ngModel)]="horairee.heure_arrivee" name="heure_arrivee" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                        <label for="heure_depart" class="form-label">Heure Départ</label>
+                        <input type="time" class="form-control" id="heure_depart" [(ngModel)]="horairee.heure_depart" name="heure_depart " required>
+                        </div>
+                    
+                        <div class="mb-3">
+                        <label for="type" class="form-label">type</label>
+                        <select [(ngModel)]="horaire.type" name="type" class="form-control" required>
+                            <option value="FIXE">Fixe</option>
+                            <option value="FLEXIBLE">Flexible</option>
+                          </select>
+                        </div>
+                    
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Modifier Horaire</button>
+                        </div>
+                    </form>
+  
+              </div>
+              
+        
+                    
+         </div>
+        
+              </div>
+          </div>
+        </div>
+    
+
+</div>
+
