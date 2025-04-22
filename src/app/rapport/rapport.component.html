@@ -1,0 +1,325 @@
+<div class="wrapper">
+    <!-- Preloader -->
+
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="../../assets/images/calendrier.png" alt="AdminLTELogo" height="80" width="80">
+      </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/employer" class="nav-link">Employers</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+        
+            <li class="nav-item dropdown">
+                
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" href="#" role="button">
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="layout">
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+      <a href="#" class="brand-link">
+        <div class="app-logo">
+          <i class="fas fa-clock"></i>
+          <div class="logo-text">
+              <h1>TimeTracker </h1>
+          </div>
+      </div>
+      </a>
+
+        <div class="sidebar">
+            <div class="user-panel" style="display: flex; align-items: center; gap: 10px; background-color: transparent; text-align: center;">
+                <div class="image" style="flex: 0 0 auto; text-align: center;">
+                    <img src="../../assets/images/Profile.png" alt="User" style="width: 100px; height: 100px;">
+                </div>
+              <!--  <div style="flex: 1; text-align: left;"><p style="margin: 0; font-size: 1em; color: white; font-family: Arial, sans-serif;">{{ email }}</p>
+                </div>-->
+            </div>
+            <nav class="mt-2">
+              <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+                  <li class="nav-item">
+                      <a routerLink="/Dashboard" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Dashboard')">
+                          <i class="nav-icon fas fa-tachometer-alt"></i>
+                          <B> <p>Tableau de bord</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Employer" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Employer')">
+                          <i class="fas fa-users nav-icon"></i>
+                          <B><p> Employer</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/EmployerDetail" routerLinkActive="active" class="nav-link" (click)="reloadPage('/EmployerDetail')">
+                          <i class="fas fa-users nav-icon"></i>
+                          <B><p> Employer Details</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Horaire" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Horaire')">
+                        <i class="fas fa-calendar-alt nav-icon"></i> 
+                          <B><p> Horaire de Travail</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Pointage" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Pointage')">
+                        <i class="fas fa-clock nav-icon"></i>
+                          <B><p> Pointage</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Rapport" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Rapport')">
+                          <i class="fas fa-calendar-check nav-icon"></i>
+                          <B><p>Rapport </p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Anomalie" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Anomalie')">
+                        <i class="fas fa-exclamation-triangle nav-icon"></i>
+                          <B><p> Anomalie</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a routerLink="/Calendrier" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Calendrier')">
+                          <i class="fas fa-calendar-alt nav-icon"></i>
+                          <B><p>Calendrier de Présences</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/Conge" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Conge')">
+                      <i class="fas fa-plane nav-icon"></i>
+                        <B><p>Congé</p></B>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="userRole === 'Super_Admin'" >
+                  <a routerLink="/Admin" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Admin')">
+                      <i class="fas fa-user-shield nav-icon"></i>
+                      <B><p>Administrateur</p></B>
+                  </a>
+              </li>
+              <li class="nav-item">
+                  <a routerLink="/ChatBot" routerLinkActive="active" class="nav-link" (click)="reloadPage('/ChatBot')">
+                      <i class="fas fa-robot nav-icon"></i>
+                      <B><p>Chatbot</p></B>
+                  </a>
+              </li>
+                  <li class="nav-item">
+                      <a (click)="logout()" class="nav-link">
+                          <i class="nav-icon fas fa-sign-out-alt"></i>
+                          <B><p>Déconnexion</p></B>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+        </div>
+    </aside>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                      <div class="app-logo2">
+                        <i class="fas fa-clock"></i>
+                        <div class="logo-text">
+                            <h1>TimeTracker <span>Pro</span></h1>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+
+        <br>
+          
+           
+            <div class="card shadow-lg p-3 bg-white rounded">
+              <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">📊 Liste des Rapports de Pointage</h4>
+              </div>
+            
+              <div class="card-body">
+                <table class="table table-hover table-bordered text-center">
+                  <thead class="table-dark">
+                    <tr>
+                      <th>Employé</th>
+                      <th>Période</th>
+                      <th>Heures Travaillées</th>
+                      <th>Heures Supplémentaires</th>
+                      <th>Retards</th>
+                      <th>Absences</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let rapport of rapports">
+                      <td>{{ rapport.employe.nom }} {{ rapport.employe.prenom }}</td>
+                      <td>{{ rapport.periode }}</td>
+                      <td>{{ rapport.heures_travaillees }}</td>
+                      <td>{{ rapport.heures_supplementaires }}</td>
+                      <td>
+                        <span class="badge bg-warning text-dark">{{ rapport.retards }}</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-danger">{{ rapport.absences }}</span>
+                      </td>
+                      <td>
+                        <button class="btn btn-sm btn-info" (click)="voirDetails(rapport)" data-bs-toggle="modal" data-bs-target="#detailsRapport">
+                          <i class="bi bi-eye"></i> Détails
+                        </button>
+                        <button class="btn btn-sm btn-success" (click)="generatePdf(rapport)">
+                          <i class="bi bi-file-earmark-pdf"></i> PDF
+                        </button>
+                        <button class="btn btn-sm btn-warning" (click)="generateExcel(rapport)">
+                          <i class="bi bi-file-earmark-excel"></i> Excel
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            
+                <!-- Message si la liste est vide -->
+                <ng-template #noData>
+                  <div class="alert alert-warning text-center" role="alert">
+                    ⚠️ Aucun rapport disponible.
+                  </div>
+                </ng-template>
+              </div>
+            </div>
+            
+            <!-- Modal pour afficher les détails d'un rapport -->
+            <div class="modal fade" id="detailsRapport" tabindex="-1" aria-labelledby="detailsRapportLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header bg-info text-white">
+                    <h5 class="modal-title" id="detailsRapportLabel">📌 Détails du Rapport</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p><strong>Employé:</strong> {{ rapportSelectionne?.employe.nom }} {{ rapportSelectionne?.employe.prenom }}</p>
+                    <p><strong>Période:</strong> {{ rapportSelectionne?.periode }}</p>
+            
+                    <h6>🗓️ Détails par jour :</h6>
+                    <table class="table table-bordered">
+                      <thead class="table-light">
+                        <tr>
+                          <th>Jour</th>
+                          <th>Heures Travaillées</th>
+                          <th>Heures Supplémentaires</th>
+                          <th>Retard</th>
+                          <th>Absent</th>
+                          <th>Statut Jour</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let detail of rapportSelectionne?.details">
+                          <td>{{ detail.jour }}</td>
+                          <td>{{ detail.heuresTravaillees }}</td>
+                          <td>{{ detail.heuresSupplementaires }}</td>
+                          <td>
+                            <span *ngIf="detail.enRetard" class="badge bg-warning">Oui</span>
+                            <span *ngIf="!detail.enRetard" class="badge bg-success">Non</span>
+                          </td>
+                          <td>
+                            <span *ngIf="detail.absent" class="badge bg-danger">Oui</span>
+                            <span *ngIf="!detail.absent" class="badge bg-success">Non</span>
+                          </td>
+                          <td>
+                            <!-- Affichage du statut du jour -->
+                            <span *ngIf="detail.statutJour === 'Congé'" class="badge bg-primary">Congé</span>
+                            <span *ngIf="detail.statutJour === 'Week-end'" class="badge bg-secondary">Week-end</span>
+                            <span *ngIf="detail.statutJour === 'Travail'" class="badge bg-success">Travail</span>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+      
+          
+        </div><!-- /.container-fluid -->
+      </section>
+    <div class="modal fade" id="addChambre" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Create a Room</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+    
+                        <div class="mb-3">
+                            <label for="chambreNumero" class="form-label">Room Number</label>
+                            <input type="text" class="form-control" id="chambreNumero" name="chambreNumero" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="typeChambre" class="form-label">Room Type</label>
+                            <input type="text" class="form-control" id="typeChambre" name="typeChambre" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="prix" class="form-label">Price</label>
+                            <input type="number" step="0.01" class="form-control" id="prix" name="prix" required>
+                        </div>
+    
+                        <div class="mb-3">
+                            <label for="disponible" class="form-label">Available</label>
+                            <select class="form-select" id="disponible" name="disponible" required>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+    
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Add Room</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+</div>
+</div>
