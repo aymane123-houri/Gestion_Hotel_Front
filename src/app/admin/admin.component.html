@@ -1,0 +1,445 @@
+<div class="wrapper">
+    <!-- Preloader -->
+
+    <div class="preloader flex-column justify-content-center align-items-center">
+        <img class="animation__shake" src="../../assets/images/calendrier.png" alt="AdminLTELogo" height="80" width="80">
+      </div>
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/home" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="/employer" class="nav-link">Employers</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+        
+            <li class="nav-item dropdown">
+                
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" href="#" role="button">
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="layout">
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <a href="#" class="brand-link">
+          <div class="app-logo">
+            <i class="fas fa-clock"></i>
+            <div class="logo-text">
+                <h1>TimeTracker</h1>
+            </div>
+        </div>
+        </a>
+
+        <div class="sidebar">
+            <div class="user-panel" style="display: flex; align-items: center; gap: 10px; background-color: transparent; text-align: center;">
+                <div class="image" style="flex: 0 0 auto; text-align: center;">
+                    <img src="../../assets/images/Profile.png" alt="User" style="width: 100px; height: 100px;">
+                </div>
+              <!--  <div style="flex: 1; text-align: left;"><p style="margin: 0; font-size: 1em; color: white; font-family: Arial, sans-serif;">{{ email }}</p>
+                </div>-->
+            </div>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+                    <li class="nav-item">
+                        <a routerLink="/Dashboard" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Dashboard')">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <B> <p>Tableau de bord</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Employer" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Employer')">
+                            <i class="fas fa-users nav-icon"></i>
+                            <B><p> Employer</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/EmployerDetail" routerLinkActive="active" class="nav-link" (click)="reloadPage('/EmployerDetail')">
+                            <i class="fas fa-users nav-icon"></i>
+                            <B><p> Employer Details</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Horaire" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Horaire')">
+                          <i class="fas fa-calendar-alt nav-icon"></i> 
+                            <B><p> Horaire de Travail</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Pointage" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Pointage')">
+                          <i class="fas fa-clock nav-icon"></i>
+                            <B><p> Pointage</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Rapport" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Rapport')">
+                            <i class="fas fa-calendar-check nav-icon"></i>
+                            <B><p>Rapport </p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Anomalie" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Anomalie')">
+                          <i class="fas fa-exclamation-triangle nav-icon"></i>
+                            <B><p> Anomalie</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Calendrier" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Calendrier')">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <B><p>Calendrier de Présences</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a routerLink="/Conge" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Conge')">
+                        <i class="fas fa-plane nav-icon"></i>
+                          <B><p>Congé</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item" *ngIf="userRole === 'Super_Admin'" >
+                    <a routerLink="/Admin" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Admin')">
+                        <i class="fas fa-user-shield nav-icon"></i>
+                        <B><p>Administrateur</p></B>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/ChatBot" routerLinkActive="active" class="nav-link" (click)="reloadPage('/ChatBot')">
+                        <i class="fas fa-robot nav-icon"></i>
+                        <B><p>Chatbot</p></B>
+                    </a>
+                </li>
+                
+                    <li class="nav-item">
+                        <a (click)="logout()" class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                            <B><p>Déconnexion</p></B>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <div class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                      <div class="app-logo2">
+                        <i class="fas fa-clock"></i>
+                        <div class="logo-text">
+                            <h1>TimeTracker <span>Pro</span></h1>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- Main content -->
+      <!-- /.content -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+      <br>
+  
+      <!-- Card for Add Admin Form -->
+      <div class="card shadow-lg p-3 bg-white rounded mb-4">
+        <div class="card-header bg-success text-white">
+          <h4 class="mb-0">Ajouter un Administrateur</h4>
+        </div>
+        <div class="card-body">
+            <form #adminForm="ngForm" (ngSubmit)="addAdmin(adminForm)" class="needs-validation" novalidate>
+                <div class="row g-3">
+                  
+                  <!-- Nom -->
+                  <div class="col-md-6">
+                    <label for="nom" class="form-label">Nom *</label>
+                    <input type="text" class="form-control" id="nom" name="nom" 
+                           [(ngModel)]="newAdmin.nom" required #nom="ngModel"
+                           [class.is-invalid]="nom.invalid && (nom.dirty || nom.touched)">
+                    <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="invalid-feedback">
+                      Le nom est obligatoire
+                    </div>
+                  </div>
+              
+                  <!-- Prénom -->
+                  <div class="col-md-6">
+                    <label for="prenom" class="form-label">Prénom *</label>
+                    <input type="text" class="form-control" id="prenom" name="prenom"
+                           [(ngModel)]="newAdmin.prenom" required #prenom="ngModel"
+                           [class.is-invalid]="prenom.invalid && (prenom.dirty || prenom.touched)">
+                    <div *ngIf="prenom.invalid && (prenom.dirty || prenom.touched)" class="invalid-feedback">
+                      Le prénom est obligatoire
+                    </div>
+                  </div>
+              
+                  <!-- CIN -->
+                  <div class="col-md-6">
+                    <label for="cin" class="form-label">CIN *</label>
+                    <input type="text" class="form-control" id="cin" name="cin"
+                           [(ngModel)]="newAdmin.cin" required #cin="ngModel" minlength="6"
+                           [class.is-invalid]="cin.invalid && (cin.dirty || cin.touched)">
+                    <div *ngIf="cin.invalid && (cin.dirty || cin.touched)" class="invalid-feedback">
+                      <div *ngIf="cin.errors?.['required']">Le CIN est obligatoire</div>
+                      <div *ngIf="cin.errors?.['minlength']">Minimum 6 caractères</div>
+                    </div>
+                  </div>
+              
+                  <!-- Email -->
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email *</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                           [(ngModel)]="newAdmin.email" required #email="ngModel"
+                           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                           [class.is-invalid]="email.invalid && (email.dirty || email.touched)">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+                      <div *ngIf="email.errors?.['required']">Email obligatoire</div>
+                      <div *ngIf="email.errors?.['pattern']">Format email invalide</div>
+                    </div>
+                  </div>
+              
+                  <!-- Téléphone -->
+                  <div class="col-md-6">
+                    <label for="telephone" class="form-label">Téléphone *</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone"
+                           [(ngModel)]="newAdmin.telephone" required #telephone="ngModel"
+                           pattern="[0-9]{10}" maxlength="10"
+                           [class.is-invalid]="telephone.invalid && (telephone.dirty || telephone.touched)">
+                    <div *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)" class="invalid-feedback">
+                      <div *ngIf="telephone.errors?.['required']">Téléphone obligatoire</div>
+                      <div *ngIf="telephone.errors?.['pattern']">10 chiffres requis</div>
+                    </div>
+                  </div>
+              
+                  <!-- Rôle -->
+                  <div class="col-md-6">
+                    <label for="role" class="form-label">Rôle *</label>
+                    <select class="form-select" id="role" name="role"
+                            [(ngModel)]="newAdmin.role" required #role="ngModel"
+                            [class.is-invalid]="role.invalid && (role.dirty || role.touched)">
+                      <option value="RH">RH</option>
+                      <option value="Admin">Admin</option>
+                      <option value="SuperAdmin">Super Admin</option>
+                    </select>
+                    <div *ngIf="role.invalid && (role.dirty || role.touched)" class="invalid-feedback">
+                      Sélectionnez un rôle
+                    </div>
+                  </div>
+              
+                  <!-- Mot de passe -->
+                  <div class="col-md-6">
+                    <label for="motDePasse" class="form-label">Mot de passe *</label>
+                    <input type="password" class="form-control" id="motDePasse" name="motDePasse"
+                           [(ngModel)]="newAdmin.motDePasse" required #motDePasse="ngModel" minlength="6"
+                           [class.is-invalid]="motDePasse.invalid && (motDePasse.dirty || motDePasse.touched)">
+                    <div *ngIf="motDePasse.invalid && (motDePasse.dirty || motDePasse.touched)" class="invalid-feedback">
+                      <div *ngIf="motDePasse.errors?.['required']">Mot de passe obligatoire</div>
+                      <div *ngIf="motDePasse.errors?.['minlength']">Minimum 6 caractères</div>
+                    </div>
+                  </div>
+              
+                  <!-- Confirmation mot de passe -->
+                  <!-- In your password confirmation field -->
+                <div class="col-md-6 mb-3">
+                    <label for="confirmMotDePasse" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmMotDePasse" name="confirmMotDePasse"
+                        [(ngModel)]="confirmMotDePasse" required #confirmMotDePasseInput="ngModel"
+                        [class.is-invalid]="newAdmin.motDePasse !== confirmMotDePasse && confirmMotDePasseInput.touched">
+                        
+                    <div *ngIf="newAdmin.motDePasse !== confirmMotDePasse && confirmMotDePasseInput.touched" 
+                        class="invalid-feedback">
+                    Passwords do not match
+                    </div>
+                </div>
+              
+                  <!-- Boutons -->
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary me-2" [disabled]="adminForm.invalid">
+                      <i class="bi bi-save"></i> Enregistrer
+                    </button>
+                    <button type="reset" class="btn btn-outline-secondary" >
+                      <i class="bi bi-x-circle"></i> Annuler
+                    </button>
+                  </div>
+                </div>
+              </form>
+        </div>
+      </div>
+  
+      <!-- Existing Admin List Card -->
+      <div class="card shadow-lg p-3 bg-white rounded">
+        <div class="card-header bg-primary text-white">
+          <h4 class="mb-0">Liste des Administrateurs</h4>
+        </div>
+      
+        <div class="card-body">
+          <div class="d-flex mb-3">
+            <input 
+              type="text" 
+              class="form-control me-2" 
+              placeholder="Rechercher une Administrateur.." 
+              [(ngModel)]="searchText"
+            >
+            <button class="btn btn-success me-2" (click)="exportToExcel()">
+              <i class="bi bi-file-earmark-excel"></i> Excel
+            </button>
+            <button class="btn btn-danger" (click)="exportToPDF()">
+              <i class="bi bi-file-earmark-pdf"></i> PDF
+            </button>
+          </div>
+          <table class="table table-hover table-bordered text-center align-middle">
+            <thead class="table-dark">
+              <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>CIN</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let admin of filteredAdmin | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+                <td>{{ admin.id }}</td>
+                <td>{{ admin.nom }}</td>
+                <td>{{ admin.prenom }}</td>
+                <td>{{ admin.cin }}</td>
+                <td>{{ admin.role }}</td>
+                <td>{{ admin.email }}</td>
+                <td>{{ admin.telephone }}</td>
+                <td>
+                  <button class="btn btn-outline-warning btn-sm mx-1" (click)="selectAdmin(admin)" data-bs-toggle="modal" data-bs-target="#editEmployer">
+                    <i class="bi bi-pencil-square fs-5"></i>
+                  </button>
+                  <button class="btn btn-outline-danger btn-sm mx-1" (click)="deleteAdmin(admin)">
+                    <i class="bi bi-trash fs-5"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <pagination-controls 
+          (pageChange)="page = $event" 
+          previousLabel="Précédent" 
+          nextLabel="Suivant">
+        </pagination-controls>
+        <label for="itemsPerPage">Éléments par page :</label>
+        <select id="itemsPerPage" [(ngModel)]="itemsPerPage">
+          <option *ngFor="let size of [5, 10, 15, 20]" [value]="size">{{ size }}</option>
+        </select>   
+      </div>
+  
+    </div><!-- /.container-fluid -->
+  </section>
+  <!-- /.content -->
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+     <div class="modal fade" id="editEmployer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier les Informarmation d'un Employé</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+        <div class="modal-body">
+            <div class="modal-body">
+
+                    <form (ngSubmit)="onSubmit()" #userForm="ngForm">
+                        <div class="mb-3">
+                        <label for="First_name" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="First_name" [(ngModel)]="admin.prenom" name="First_name" required>
+                        </div>
+                    
+                        <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" [(ngModel)]="admin.nom" name="last_name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cin" class="form-label">CIN</label>
+                            <input type="text" class="form-control" id="cin" [(ngModel)]="admin.cin" name="cin " required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" [(ngModel)]="admin.email" name="email " required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telephone" class="form-label">Telephone</label>
+                            <input type="text" class="form-control" id="telephone" [(ngModel)]="admin.telephone" name="telephone " required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role" [(ngModel)]="admin.role" name="role" required #role="ngModel"
+                                [class.is-invalid]="role.invalid && role.touched">
+                                <option value="" disabled selected>Sélectionnez un rôle</option>
+                                <option *ngFor="let role of rolesList" [value]="role.value">{{role.label}}</option>
+                            </select>
+                            <div *ngIf="role.invalid && role.touched" class="invalid-feedback">
+                                Veuillez sélectionner un rôle
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Modifier Admin</button>
+                        </div>
+                    </form>
+              </div>                      
+         </div>
+              </div>
+          </div>
+        </div> 
+
+
+</div>
+
