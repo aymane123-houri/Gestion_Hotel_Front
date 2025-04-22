@@ -1,0 +1,315 @@
+<!--
+<div class="body">
+    <br><br><br><br><br>
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login" style="padding-left: 60px;" [style.marginLeft]="loginTextMargin">Login Form</div>
+            <div class="title signup" [style.marginLeft]="signupTextMargin">Signup Form</div> 
+        </div>
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login" (click)="onLoginClick()">Login</label>
+                <label for="signup" class="slide signup" (click)="onSignupClick()">Signup</label>
+                <div class="slider-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form class="login" [formGroup]="loginForm" [style.marginLeft]="loginFormMargin" (ngSubmit)="login()">
+                    <div class="field">
+                        <input type="text" placeholder="Email Address" formControlName="email" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" formControlName="password" required>
+                    </div>
+                    <div class="field">
+                        <select id="role" formControlName="role" required>
+                            <option value="ADMINISTRATEUR">Admin</option>
+                            <option value="RH">RH</option>
+                            <option value="Super_Admin">Super Admin</option>
+                        </select>
+                    </div>
+                    <div class="pass-link"><a href="#">Forgot password?</a></div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">Not a member? <a href="#" (click)="onSignupLinkClick()">Signup now</a></div>
+                </form>
+                <form class="signup" [formGroup]="signupForm" (ngSubmit)="signup()">
+                    <div class="field-group">
+                        <div class="field">
+                            <input type="text" placeholder="Nom" formControlName="nom" required>
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="Prénom" formControlName="prenom" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field">
+                            <input type="text" placeholder="Téléphone" formControlName="telephone" required >
+                        </div>
+                        <div class="field">
+                            <input type="text" placeholder="CNI" formControlName="cni" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <input type="email" placeholder="Email Address" formControlName="email" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Password" formControlName="password" required>
+                    </div>
+                    <div class="field">
+                        <input type="password" placeholder="Confirm password" formControlName="confirmPassword" required>
+                    </div>
+            
+                    <div class="form-group" class="field">
+                        <label for="role-signup">Role:</label>
+                        <select id="role-signup" formControlName="role" required>
+                          <option value="ADMINISTRATEUR">Admin</option>
+                          <option value="RH">RH</option>
+                          <option value="Super_Admin">Super Admin</option>
+                        </select>
+                      </div>
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Signup">
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+
+<div class="auth-container">
+    <!-- Arrière-plan vidéo optionnel 
+    <video autoplay muted loop class="bg-video">
+        <source src="../../assets/images/Face.mp4" type="video/mp4">
+    </video>-->
+    <div class="particles-container">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <!-- Ajoutez plus de particules si besoin -->
+    </div>
+
+    <!-- Bandeau d'information 
+    <div class="app-info">
+        <h1><i class="fas fa-clock"></i> TimeTracker Pro</h1>
+        <p>Solution complète de gestion du temps et des pointages</p>
+    </div>-->
+    
+    <div class="app-info">
+        <!-- Logo + Nom avec animation plus sophistiquée -->
+        <div class="app-logo-wrapper">
+            <div class="app-logo">
+                <i class="fas fa-clock"></i>
+                <div class="logo-text">
+                    <h1>TimeTracker <span>Pro</span></h1>
+                    <div class="logo-subtitle">Votre partenaire productivité</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Accroche principale avec effet visuel -->
+        <div class="hero-statement">
+            <div class="statement-text">
+                <span class="highlight-word">Optimisez</span> votre temps, 
+                <span class="highlight-word">Simplifiez</span> vos processus, 
+                <span class="highlight-word">Boostez</span> votre productivité
+            </div>
+            <div class="statement-badge">Solution certifiée GDPR</div>
+        </div>
+        
+        <!-- Avantages différentiants sous forme de cartes miniatures -->
+        <div class="value-propositions">
+            <div class="proposition-card">
+                <div class="proposition-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="proposition-text">
+                    <strong>Sécurité</strong> des données garantie
+                </div>
+            </div>
+            <div class="proposition-card">
+                <div class="proposition-icon">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                <div class="proposition-text">
+                    <strong>Déploiement</strong> en 24h
+                </div>
+            </div>
+            <div class="proposition-card">
+                <div class="proposition-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <div class="proposition-text">
+                    <strong>Support</strong> dédié 24/7
+                </div>
+            </div>
+        </div>
+        
+        <!-- Appel à action secondaire -->
+        <div class="secondary-cta">
+            <p>Déjà <strong>10,000+ entreprises</strong> nous font confiance</p>
+            <button class="demo-button">
+                <i class="fas fa-play-circle"></i> Voir la démo
+            </button>
+        </div>
+
+
+
+
+    <div class="wrapper">
+        <div class="title-text">
+            <div class="title login" [style.marginLeft]="loginTextMargin">Connexion</div>
+            <div class="title signup" [style.marginLeft]="signupTextMargin">Inscription</div> 
+        </div>
+        
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slide" id="login" checked>
+                <input type="radio" name="slide" id="signup">
+                <label for="login" class="slide login" (click)="onLoginClick()">Connexion</label>
+                <label for="signup" class="slide signup" (click)="onSignupClick()">Inscription</label>
+                <div class="slider-tab"></div>
+            </div>
+            
+            <div class="form-inner">
+                <!-- Formulaire de Login -->
+                <form class="login" [formGroup]="loginForm" [style.marginLeft]="loginFormMargin" (ngSubmit)="login()" >
+                    <div class="field">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="email" placeholder="Adresse Email" formControlName="email" required>
+                    </div>
+                    
+                    <div class="field">
+                        <i class="fas fa-lock icon"></i>
+                        <input type="password" placeholder="Mot de passe" formControlName="password" required>
+                    </div>
+                    
+                    <div class="field">
+                        <i class="fas fa-user-tag icon"></i>
+                        <select id="role" formControlName="role" required>
+                            <option value="ADMINISTRATEUR">Administrateur</option>
+                            <option value="RH">Ressources Humaines</option>
+                            <option value="Super_Admin">Super Admin</option>
+                        </select>
+                    </div>
+                    
+                    <div class="pass-link">
+                        <a href="#">Mot de passe oublié ?</a>
+                    </div>
+                    
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="Se connecter">
+                    </div>
+                    
+                    <div class="signup-link">
+                        Pas encore membre ? <a href="#" (click)="onSignupLinkClick()">S'inscrire</a>
+                    </div>
+                </form>
+                
+                <!-- Formulaire d'Inscription -->
+                <form class="signup" [formGroup]="signupForm" (ngSubmit)="signup()">
+                    <div class="field-group">
+                        <div class="field">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" placeholder="Nom" formControlName="nom" required>
+                        </div>
+                        <div class="field">
+                            <i class="fas fa-user icon"></i>
+                            <input type="text" placeholder="Prénom" formControlName="prenom" required>
+                        </div>
+                    </div>
+                    
+                    <div class="field-group">
+                        <div class="field">
+                            <i class="fas fa-phone icon"></i>
+                            <input type="tel" placeholder="Téléphone" formControlName="telephone" required>
+                        </div>
+                        <div class="field">
+                            <i class="fas fa-id-card icon"></i>
+                            <input type="text" placeholder="CNI" formControlName="cni" required>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <i class="fas fa-envelope icon"></i>
+                        <input type="email" placeholder="Adresse Email" formControlName="email" required>
+                    </div>
+                    
+                    <div class="field-group">
+                        <div class="field">
+                            <i class="fas fa-lock icon"></i>
+                            <input type="password" placeholder="Mot de passe" formControlName="password" required>
+                        </div>
+                        <div class="field">
+                            <i class="fas fa-lock icon"></i>
+                            <input type="password" placeholder="Confirmer mot de passe" formControlName="confirmPassword" required>
+                        </div>
+                    </div>
+                    
+                    <div class="field">
+                        <i class="fas fa-user-tag icon"></i>
+                        <select id="role-signup" formControlName="role" required>
+                            <option value="ADMINISTRATEUR">Administrateur</option>
+                            <option value="RH">Ressources Humaines</option>
+                            <option value="Super_Admin">Super Admin</option>
+                        </select>
+                    </div>
+                    
+                    <div class="field btn">
+                        <div class="btn-layer"></div>
+                        <input type="submit" value="S'inscrire">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Section fonctionnalités -->
+<div class="features-section">
+    <div class="feature-card">
+        <i class="fas fa-camera"></i> <!-- Icône caméra pour reconnaissance faciale -->
+        <h3>Pointage facial</h3>
+        <p>Reconnaissance faciale sécurisée et rapide</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-chart-pie"></i>
+        <h3>Analytique en temps réel</h3>
+        <p>Suivez les performances de votre équipe</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-file-alt"></i>
+        <h3>Rapports automatiques</h3>
+        <p>Génération quotidienne des rapports de pointage</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-exclamation-triangle"></i>
+        <h3>Alertes RH</h3>
+        <p>Notifications pour absences anormales</p>
+    </div>
+    <div class="feature-card">
+        <i class="fas fa-file-export"></i>
+        <h3>Export automatisé</h3>
+        <p>Génération de fichiers Excel/PDF</p>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="auth-footer">
+        <p>© 2025 TimeTracker Pro. Tous droits réservés.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+    </footer>
+</div>
