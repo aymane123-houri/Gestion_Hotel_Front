@@ -1,0 +1,246 @@
+
+  <div class="wrapper">
+
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  
+        <ul class="navbar-nav ml-auto">
+        
+            <li class="nav-item dropdown">
+                
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="control-sidebar" href="#" role="button">
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="layout">
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <a href="#" class="brand-link">
+            <div class="app-logo">
+              <i class="fas fa-clock"></i>
+              <div class="logo-text">
+                  <h1>TimeTracker</h1>
+              </div>
+          </div>
+          </a>
+  
+        <div class="sidebar">
+            <div class="user-panel" style="display: flex; align-items: center; gap: 10px; background-color: transparent; text-align: center;">
+                <div class="image" style="flex: 0 0 auto; text-align: center;">
+                    <img src="../../assets/images/Profile.png" alt="User" style="width: 100px; height: 100px;">
+                </div>
+              <!--  <div style="flex: 1; text-align: left;"><p style="margin: 0; font-size: 1em; color: white; font-family: Arial, sans-serif;">{{ email }}</p>
+                </div>-->
+            </div>
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" role="menu">
+                    <li class="nav-item">
+                        <a routerLink="/Dashboard" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Dashboard')">
+                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <B> <p>Tableau de bord</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Employer" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Employer')">
+                            <i class="fas fa-users nav-icon"></i>
+                            <B><p> Employer</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/EmployerDetail" routerLinkActive="active" class="nav-link" (click)="reloadPage('/EmployerDetail')">
+                            <i class="fas fa-users nav-icon"></i>
+                            <B><p> Employer Details</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Horaire" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Horaire')">
+                          <i class="fas fa-calendar-alt nav-icon"></i> 
+                            <B><p> Horaire de Travail</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Pointage" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Pointage')">
+                          <i class="fas fa-clock nav-icon"></i>
+                            <B><p> Pointage</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Rapport" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Rapport')">
+                            <i class="fas fa-calendar-check nav-icon"></i>
+                            <B><p>Rapport </p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Anomalie" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Anomalie')">
+                          <i class="fas fa-exclamation-triangle nav-icon"></i>
+                            <B><p> Anomalie</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/Calendrier" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Calendrier')">
+                            <i class="fas fa-calendar-alt nav-icon"></i>
+                            <B><p>Calendrier de Présences</p></B>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a routerLink="/Conge" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Conge')">
+                        <i class="fas fa-plane nav-icon"></i>
+                          <B><p>Congé</p></B>
+                      </a>
+                  </li>
+                  <li class="nav-item" *ngIf="userRole === 'Super_Admin'" >
+                    <a routerLink="/Admin" routerLinkActive="active" class="nav-link" (click)="reloadPage('/Admin')">
+                        <i class="fas fa-user-shield nav-icon"></i>
+                        <B><p>Administrateur</p></B>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a routerLink="/ChatBot" routerLinkActive="active" class="nav-link" (click)="reloadPage('/ChatBot')">
+                        <i class="fas fa-robot nav-icon"></i>
+                        <B><p>Chatbot</p></B>
+                    </a>
+                </li>
+                    <li class="nav-item">
+                        <a (click)="logout()" class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                            <B><p>Déconnexion</p></B>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+  
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                        <div class="container-fluid">
+                            <!-- Partie gauche : Liens de navigation -->
+                            <ul class="navbar-nav me-auto">     
+                                <li class="nav-item">
+                                    <a routerLink="/Conge" routerLinkActive="active" class="nav-link">
+                                        <i class="fas fa-calendar-alt"></i> Gérer Congé
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a routerLink="/AjouteConge" routerLinkActive="active" class="nav-link">
+                                        <i class="fas fa-plus-circle"></i> Ajouter Congé
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a routerLink="/ListConge" routerLinkActive="active" class="nav-link">
+                                        <i class="fas fa-plus-circle"></i> liste des Congés
+                                    </a>
+                                </li>
+                            </ul>
+                    
+                            <!-- Partie droite : Titre -->
+                            <a class="navbar-brand">
+                                <i class="fas fa-user-clock"></i> Gestion des Congés
+                            </a>
+                        </div>
+                    </nav>
+                    
+                    
+                </div>
+            </div>
+
+            <!-- Main content -->
+      <section class="content">
+        <div class="container-fluid">
+        <br>
+  
+        <div class="card shadow-lg p-3 bg-white rounded">
+          
+            <div class="container mt-5">
+              <div class="card shadow-lg p-4">
+                  <h2 class="text-center mb-4 text-primary">Ajouter un Congé</h2>
+              
+                  <form (ngSubmit)="ajouterConge()" #congeForm="ngForm">
+                  
+                      <!-- Sélection de l'employé -->
+                      <div class="form-group">
+                          <label for="employe" class="font-weight-bold">Sélectionner un employé :</label>
+                          <select (change)="selectEmploye($event)" [(ngModel)]="conge.employeId" name="employe" class="form-control" required>
+                              <option *ngFor="let employe of employes" [value]="employe.id">
+                                  {{ employe.nom }} {{ employe.prenom }}
+                              </option>
+                          </select>
+                      </div>
+              
+                      <!-- Dates du congé -->
+                      <div class="row">
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="dateDebut" class="font-weight-bold">Date début :</label>
+                                  <input type="date" id="dateDebut" class="form-control" [(ngModel)]="conge.dateDebut" name="dateDebut" required>
+                              </div>
+                          </div>
+                          <div class="col-md-6">
+                              <div class="form-group">
+                                  <label for="dateFin" class="font-weight-bold">Date fin :</label>
+                                  <input type="date" id="dateFin" class="form-control" [(ngModel)]="conge.dateFin" name="dateFin" (ngModelChange)="calculerNombreJours()" required>
+                              </div>
+                          </div>
+                      </div>
+              
+                      <!-- Nombre de jours (disabled) -->
+                      <div class="form-group">
+                          <label for="nombreJours" class="font-weight-bold">Nombre de jours :</label>
+                          <input type="number" [(ngModel)]="conge.nombreJours" name="nombre_jours" class="form-control" [disabled]="true" />
+                      </div>
+              
+                      <!-- Type de congé -->
+                      <div class="form-group">
+                          <label for="type" class="font-weight-bold">Type de congé :</label>
+                          <select id="type" class="form-control" [(ngModel)]="conge.type" name="type" required>
+                              <option *ngFor="let type of typesConge" [value]="type">
+                                  {{ type }}
+                              </option>
+                          </select>
+                      </div>
+              
+                      <!-- Commentaire -->
+                      <div class="form-group">
+                          <label for="commentaire" class="font-weight-bold">Commentaire :</label>
+                          <textarea id="commentaire" class="form-control" [(ngModel)]="conge.commentaire" name="commentaire" rows="3"></textarea>
+                      </div>
+              
+                      <!-- Bouton de soumission -->
+                      <div class="text-center">
+                          <button type="submit" class="btn btn-success btn-lg">Enregistrer</button>
+                      </div>
+                  </form>
+              
+                  <p *ngIf="message" class="alert alert-success mt-3 text-center">{{ message }}</p>
+              </div>
+          
+          </div>
+        </div>
+  
+  
+          
+        </div><!-- /.container-fluid -->
+      </section>
+      <!-- /.content -->
+    </div>
+</div>
+    
+  
+  </div>
+  
+  
